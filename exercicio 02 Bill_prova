@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+   int tamanho, i, j, diagonal1 = 0, diagonal2 = 0;
+   printf("Digite o tamanho da matriz: ");
+   scanf("%d", &tamanho);
+   int matriz[tamanho][tamanho];
+
+   printf("Digite os valores da matriz:\n");
+   for (i = 0; i < tamanho; i++) {
+      for (j = 0; j < tamanho; j++) {
+         scanf("%d", &matriz[i][j]);
+      }
+   }
+
+   for (i = 0; i < tamanho; i++) {
+      diagonal1 += matriz[i][i];
+   }
+
+   for (i = 0; i < tamanho; i++) {
+      diagonal2 += matriz[i][tamanho - i - 1];
+   }
+
+   printf("Soma da diagonal principal: %d\n", diagonal1);
+   printf("Soma da diagonal secundária: %d\n", diagonal2);
+
+   return 0;
+}
